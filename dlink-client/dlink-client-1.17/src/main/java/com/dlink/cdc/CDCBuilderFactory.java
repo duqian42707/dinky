@@ -21,6 +21,7 @@ package com.dlink.cdc;
 
 import com.dlink.assertion.Asserts;
 import com.dlink.cdc.mysql.MysqlCDCBuilder;
+import com.dlink.cdc.postgres.PostgresCDCBuilder;
 import com.dlink.exception.FlinkClientException;
 import com.dlink.model.FlinkCDCConfig;
 
@@ -40,6 +41,7 @@ public class CDCBuilderFactory {
 
         {
             put(MysqlCDCBuilder.KEY_WORD, () -> new MysqlCDCBuilder());
+            put(PostgresCDCBuilder.KEY_WORD, () -> new PostgresCDCBuilder());
         }
     };
 
